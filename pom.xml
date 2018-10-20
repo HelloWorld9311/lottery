@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.lottery</groupId>
+    <artifactId>lottery</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>lottery-web</module>
+        <module>lottery-security</module>
+        <module>lottery-common</module>
+        <module>lottery-domain</module>
+        <module>lottery-manager</module>
+        <module>lottery-service</module>
+        <module>lottery-tools</module>
+        <module>lottery-schedule</module>
+    </modules>
+    <name>彩票投注APP服务器端接口</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!--Maven 编译工具版本定义-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!--在IDEA中指定JDK编译版本-->
+        <java.version>1.8</java.version>
+
+        <!--指定项目编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <lottery-project.version>1.0-SNAPSHOT</lottery-project.version>
+
+        <mybatis.version>3.4.0</mybatis.version>
+        <mybatis-spring-boot-starter.version>1.1.1</mybatis-spring-boot-starter.version>
+        <druid.version>1.0.18</druid.version>
+        <mysql.driver.version>5.1.41</mysql.driver.version>
+        <!--<pagehelper.version>4.1.1</pagehelper.version>-->
+        <common.lang3.version>3.4</common.lang3.version>
+        <fastjson.version>1.2.17</fastjson.version>
+        <commons.io.version>2.4</commons.io.version>
+        <swagger2-version>2.6.1</swagger2-version>
+        <poi.version>3.15</poi.version>
+        <poi-ooxml.version>3.15</poi-ooxml.version>
+        <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.5.9.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 项目本身module依赖 -->
+            <dependency>
+                <groupId>com.github.lottery</groupId>
+                <artifactId>lottery-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.lottery</groupId>
+                <artifactId>lottery-domain</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.lottery</groupId>
+                <artifactId>lottery-manager</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.lottery</groupId>
+                <artifactId>lottery-security</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.lottery</groupId>
+                <artifactId>lottery-service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <!--配置druid数据源-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!--MySql链接器-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.driver.version}</version>
+            </dependency>
+            <!--apache语言包-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${common.lang3.version}</version>
+            </dependency>
+            <!--boot分页插件-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <!--fast json-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!--commons io-->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi-ooxml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.bqmart</groupId>
+                <artifactId>mybatis-orm</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

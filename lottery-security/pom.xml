@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lottery</artifactId>
+        <groupId>com.github.lottery</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <name>彩票投注系统－安全模块</name>
+    <artifactId>lottery-security</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- 项目模块依赖 -->
+        <dependency>
+            <groupId>com.github.lottery</groupId>
+            <artifactId>lottery-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bqmart</groupId>
+            <artifactId>bqmart-common</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

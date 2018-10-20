@@ -1,0 +1,71 @@
+# 服务器配置
+server:
+  port: 8080
+  context-path: /lottery
+
+# Spring 配置
+spring:
+  # 文件上传配置
+  http.multipart:
+      enabled: true
+      max-file-size: 50MB
+  # 控制台颜色控制
+  output.ansi.enabled: always
+  # redis数据库配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+
+  profiles:
+    include: >
+      msg-config
+
+# datasource 配置
+datasource:
+  sun:
+    username: root
+    password: qwer1234#
+    driver-class-name: com.mysql.jdbc.Driver
+    url:  jdbc:mysql://127.0.0.1:3306/lottery?useUnicode=true&characterEncoding=UTF-8
+    type: com.alibaba.druid.pool.DruidDataSource
+    maxWait: 60000
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+
+# 系统自带日志打印级别设置
+logging:
+  level.cn.bqmart: debug
+  file: lottery.log
+
+# 基本常量配置
+conf:
+# 环境参数
+  env: test
+# C端接口调用
+  backendUrl: http://api.bqmart.cn:8080
+
+  # APP支付配置
+  yg:
+    # app微信支付配置
+    # 应用appId
+    wechatAppId:
+    # 应用appSecret
+    wechatAppSecret:
+    # key
+    wechatPaykey:
+    # 商户号
+    wechatPartner:
+    wechatNotifyUrl:
+
+    # app支付宝新版本支付配置
+    # 应用appId
+    aliAppId:
+    # 应用私钥
+    aliAppRsaPrivateKey:
+    # 应用公钥
+    aliAppRsaPubKey:
+    # 支付宝公钥
+    aliPubKey:
+    aliPayNotifyUrl:
